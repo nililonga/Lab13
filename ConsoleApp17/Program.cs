@@ -10,12 +10,12 @@ namespace ConsoleApp17
     {
         static void Main(string[] args)
         {
+            
             //enter name
             Console.WriteLine("enter your name");
-            Console.ReadLine();
-            //string answer4;
-            //do
-            {
+            string name = Console.ReadLine();
+
+           
                 //select and opponent
                 Console.WriteLine("select an opponent (Enter 'A' for player1, or 'B' for player2)");
                 string answer = Console.ReadLine().ToUpper();
@@ -34,7 +34,9 @@ namespace ConsoleApp17
                 {
                     answer2 = new Player2();
                 }
-
+            string answer4;
+            do
+            {
                 A = answer2.generateRoshambo();
                 B = user1.generateRoshambo();
                 Console.WriteLine(B);
@@ -44,19 +46,18 @@ namespace ConsoleApp17
                 {
                     Console.WriteLine("it's a tie!");
                 }
-                /* else if (B = Roshambo.Rock && (answer2.generateRoshambo()) = Roshambo.Paper) //|| A = "Scissors" && B = "Paper" || A = "Rock" && B = "Scissors")
-                 {
-                     Console.WriteLine("computer wins!");
-                 }*/
-                /*else
+                else if ((A == Roshambo.Rock && B == Roshambo.Scissors) || (A == Roshambo.Paper && B == Roshambo.Rock) || (A == Roshambo.Scissors && B == Roshambo.Paper))
                 {
-                    Console.WriteLine("You won!");
+                    Console.WriteLine($" {name}, You lost!");
                 }
+                else
+                {
+                    Console.WriteLine($" {name}, You won the game!");
+                }
+
                 Console.WriteLine("would you like to play again? (Y/N)");
-                //answer4 = Console.ReadLine();
-            }*/
-                // while (answer4 == "Y")
-                Console.ReadLine();
+                answer4 = Console.ReadLine().ToUpper();
+            } while (answer4 == "Y");
 
 
 
@@ -66,6 +67,11 @@ namespace ConsoleApp17
 
 
 
-            }   }
+
+
+
+
+
+            }   
     }
 }

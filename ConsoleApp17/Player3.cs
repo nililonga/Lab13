@@ -12,12 +12,17 @@ namespace ConsoleApp17
         
         public override Roshambo generateRoshambo()
         {
-            Console.WriteLine("Select Rock, Paper, or Scissors to start playing! (Choose R/S/P)");
+            Console.WriteLine("Select Rock, Paper, or Scissors to start playing!: (Choose R/S/P)");
             string answer = Console.ReadLine().ToUpper();
 
-            while (answer != "R" || answer != "P" || answer != "S")
+            while (true)
             {
-                if (answer == "R")
+                if (answer != "R" && answer != "P" && answer != "S")
+                {
+                    Console.WriteLine("That was not a valid input, please try again");
+                    answer = Console.ReadLine().ToUpper();
+                }
+                else if (answer == "R")
                 {
                     return Roshambo.Rock;
                 }
@@ -25,17 +30,14 @@ namespace ConsoleApp17
                 {
                     return Roshambo.Paper;
                 }
-                else
+                else if (answer == "S")
                 {
                     return Roshambo.Scissors;
-                }
-            
-
-            
-                Console.WriteLine("that was not a valid entry, try again");
-                answer = Console.ReadLine().ToUpper();
-
+                } 
             }
+                
+        
+            
             
             
         }
