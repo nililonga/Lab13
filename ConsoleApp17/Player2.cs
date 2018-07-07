@@ -14,11 +14,11 @@ namespace ConsoleApp17
 
         public override Roshambo generateRoshambo()
         {
-            if (Rnd.Next(0,2) == 0)
+            if (Rnd.Next(0,3) == 0)
             {
                 return Roshambo.Rock;
             }
-            else if (Rnd.Next(0,2) == 1)
+            else if (Rnd.Next(0,3) == 1)
             {
                 return Roshambo.Paper;
             }
